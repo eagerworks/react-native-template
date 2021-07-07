@@ -1,0 +1,15 @@
+export const SHADOW = '#373737';
+export const PRIMARY = '#40d2c8';
+export const PRIMARY_LIGHT = '#4ef0d9';
+export const PRIMARY_DARK = '#70c2b1';
+export const SECONDARY = '#365849';
+export const TERTIARY = '#80733b';
+export const ERROR_COLOR = '#992222';
+export const WHITE = '#EFEFEF';
+export const BLACK = '#0F0F0F';
+export const GRAY_1 = '#A0A0A0';
+export const GRAY_2 = '#808080';
+export const GRAY_3 = '#41424C';
+export const GRAY_4 = '#322D31';
+export const GRAY_5 = '#333333';
+export const GRAY_6 = '#232023';

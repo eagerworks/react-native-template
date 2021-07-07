@@ -2,7 +2,7 @@ import SignInInfo from '@models/SignInInfo';
 
 interface ReduxCall {
   type: string;
-  payload: { userInfo: SignInInfo; token?: string; error?: string };
+  payload: { userInfo?: SignInInfo; token?: string; error?: string };
 }
 
 interface State {

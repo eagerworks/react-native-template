@@ -38,7 +38,7 @@ const TextInput: React.FC<TextInputProps> = ({
   label = '',
   value,
   onChange,
-  cleanError = () => {},
+  cleanError,
   placeholder = '',
   autoCapitalize = 'none',
   keyboardType = 'default',

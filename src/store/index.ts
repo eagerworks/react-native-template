@@ -1,14 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { persistStore } from 'redux-persist';
 
-import appReducer from './appReducer';
 import authReducer from './authReducer';
 
 import rootSaga from './sagas';
 
 const rootReducer = combineReducers({
-  appReducer,
   authReducer,
 });
 

@@ -6,7 +6,7 @@ import styles from './styles';
 interface TextProps {
   children: React.ReactNode;
   style?: StyleProp<TextStyle>;
-  restProps?: any;
+  restProps?: unknown;
 }
 
 const Text = ({ children = '', style, ...restProps }: TextProps) => {

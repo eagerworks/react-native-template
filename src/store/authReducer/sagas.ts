@@ -30,7 +30,6 @@ function* signIn() {
             data: { error },
           },
         } = errorResponse;
-        console.log(error);
 
         if (typeof error === 'string') {
           errorMessage = error;

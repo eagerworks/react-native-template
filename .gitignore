@@ -1,3 +1,9 @@
+# Ignore envs
+.env
+.env.production
+.env.staging
+.env.development
+
 # OSX
 #
 .DS_Store

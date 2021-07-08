@@ -25,6 +25,7 @@ module.exports = {
           '@constants': './src/constants',
           '@models': './src/models',
           '@assets': './assets',
+          '@icons': './assets/icons',
         },
       },
     ],

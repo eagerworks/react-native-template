@@ -1,7 +1,8 @@
 import React from 'react';
-import { ActivityIndicator, StyleProp, TextStyle, TouchableOpacity, ViewStyle } from 'react-native';
+import { StyleProp, TextStyle, TouchableOpacity, ViewStyle } from 'react-native';
 
 import Text from '@components/Text';
+import LoadingIndicator from '@components/LoadingIndicator';
 
 import layoutStyles from '@styles/layout';
 import textStyles from '@styles/text';
@@ -74,7 +75,7 @@ const Button: React.FC<TextButtonProps> = ({
       testID={testID}
     >
       {loading ? (
-        <ActivityIndicator />
+        <LoadingIndicator />
       ) : (
         <>
           <Text style={[text, customTextStyles]}>{children}</Text>

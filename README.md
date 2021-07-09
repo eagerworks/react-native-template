@@ -1,4 +1,4 @@
-# Groups Recover Together
+# React Native Template
 ## Prerequiesites
 
 This are the prerequisites for running this React Native project:

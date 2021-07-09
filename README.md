@@ -21,7 +21,9 @@ nvm use 16.4.1
 
 ### XCode
 
-The easiest way to get XCode is from the App Store [XCode](https://apps.apple.com/us/app/xcode/id497799835?mt=12). No reason for getting it somewhere else.
+The easiest way to get XCode is from the App Store
+[XCode](https://apps.apple.com/us/app/xcode/id497799835?mt=12).
+No reason for getting it somewhere else.
 
 The install command line tools:
 
@@ -31,7 +33,8 @@ $ xcode-select --install
 
 ### Cocoapods
 
-Use [rvm](https://github.com/rvm/rvm) to install the required `ruby` (any version should be good enough).
+Use [rvm](https://github.com/rvm/rvm) to install the required `ruby`
+(any version should be good enough).
 
 Then run the following to install cocoapods
 ```
@@ -61,9 +64,11 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 ### Java SDK
 
-First things first. For android development java's JDK 8 or newer will be necessary. Using Android Studio's JDK should be enough. Remember to add it to path.
+First things first. For android development java's JDK 8 or newer will be necessary.
+Using Android Studio's JDK should be enough. Remember to add it to path.
 
-If you have no intention of using Android Studio's JDK and you have no JDK installed (greater or equal tha 8) you can install one using `Homebrew`
+If you have no intention of using Android Studio's JDK and you have no JDK installed
+(greater or equal tha 8) you can install one using `Homebrew`
 
 ```
 $ brew install --cask adoptopenjdk/openjdk/adoptopenjdk8
@@ -124,7 +129,8 @@ Select the production schema and build your app.
 
 ### Building on Android
 
-You can either build by opening the project on Android Studio or going into the folder android and running
+You can either build by opening the project on Android Studio or going into the folder
+android and running
 
 ```
 $ cd android

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import { RootState } from '@store';
 import * as authActions from '@store/authReducer/actions';
@@ -31,11 +32,13 @@ const SignIn: React.FC<AuthNavParams<'SignIn'>> = ({ navigation }) => {
 
   const onSubmit = () => dispatch(authActions.signIn(userInfo));
 
+  const { t } = useTranslation();
+
   return (
     <>
       <Card style={[layoutStyles.alignCenter, layoutStyles.m10]}>
         <RabbitIcon width={100} height={100} />
-        <Text style={[layoutStyles.my20, textStyles.title]}>Login</Text>
+        <Text style={[layoutStyles.my20, textStyles.title]}>{t('common.log in')}</Text>
         <View style={[layoutStyles.mx20, layoutStyles.stretch]}>
           {error !== '' && <Text style={[textStyles.error, textStyles.tertiary]}>{error}</Text>}
           <TextInput

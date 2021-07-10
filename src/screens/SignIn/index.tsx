@@ -12,7 +12,7 @@ import SignInInfo from '@models/SignInInfo';
 
 import Text from '@components/Text';
 import TextInput from '@components/TextInput';
-import TextButton, { ButtonType } from '@components/TextButton';
+import Button, { ButtonType } from '@components/Button';
 import Card from '@components/Card';
 
 import RabbitIcon from '@icons/rabbit.svg';
@@ -51,22 +51,22 @@ const SignIn: React.FC<AuthNavParams<'SignIn'>> = ({ navigation }) => {
             secure
           />
           <View style={[layoutStyles.rowDirection, layoutStyles.mt10]}>
-            <TextButton
+            <Button
               onPress={onSubmit}
               loading={loading}
               style={[layoutStyles.flex, layoutStyles.mx5]}
               type={ButtonType.Primary}
             >
-              Sign in
-            </TextButton>
-            <TextButton
+              <Text>Sign in</Text>
+            </Button>
+            <Button
               onPress={() => navigation.navigate('SignUp')}
               loading={loading}
               style={[layoutStyles.flex, layoutStyles.mx5]}
               type={ButtonType.Secondary}
             >
-              Sign up
-            </TextButton>
+              <Text>Sign up</Text>
+            </Button>
           </View>
         </View>
       </Card>

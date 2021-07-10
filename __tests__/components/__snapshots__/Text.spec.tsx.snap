@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text renders correctly 1`] = `
+<Text
+  style={
+    Array [
+      Object {},
+      undefined,
+    ]
+  }
+>
+  test text
+</Text>
+`;

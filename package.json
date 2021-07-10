@@ -20,6 +20,7 @@
     "ios": "react-native run-ios --scheme 'TestingProject'",
     "start": "react-native start",
     "test": "jest",
+    "test:updateSnapshot": "jest --updateSnapshot",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "postinstall": "npx jetify && cd ios && pod install && cd .. && npx react-native-fix-image && patch-package"
   },
@@ -57,6 +58,9 @@
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
+    "@testing-library/jest-native": "^4.0.1",
+    "@testing-library/react-native": "^7.2.0",
+    "@types/faker": "^5.5.7",
     "@types/jest": "^26.0.23",
     "@types/react-native": "^0.64.5",
     "@types/react-test-renderer": "^16.9.2",
@@ -65,6 +69,7 @@
     "babel-jest": "^26.6.3",
     "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.30.0",
+    "faker": "^5.5.3",
     "husky": "^7.0.1",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.66.1",
@@ -79,6 +84,32 @@
   },
   "jest": {
     "preset": "react-native",
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-native/extend-expect"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?@react-native|react-native|react-navigation|@react-navigation/.*)"
+    ],
+    "setupFiles": [
+      "./node_modules/react-native-gesture-handler/jestSetup.js"
+    ],
+    "moduleNameMapper": {
+      "\\.svg": "<rootDir>/__mocks__/svgMock.js"
+    },
+    "testRegex": "/*.spec.tsx$|/*.spec.ts$",
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov"
+    ],
+    "coverageDirectory": "__coverage__",
+    "coverageThreshold": {
+      "global": {
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
+      }
+    },
     "moduleFileExtensions": [
       "ts",
       "tsx",

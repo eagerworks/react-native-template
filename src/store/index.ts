@@ -22,7 +22,7 @@ const rootReducer = combineReducers({
 const sagaMiddleware = createSagaMiddleware();
 
 const composeEnhancers =
-  (env.NODE_ENV !== 'production' &&
+  (env.NODE_ENV === 'development' &&
     (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ as typeof compose)) ||
   compose;
 

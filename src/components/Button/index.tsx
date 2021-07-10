@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleProp, TextStyle, TouchableOpacity, ViewStyle } from 'react-native';
 
-import Text from '@components/Text';
 import LoadingIndicator from '@components/LoadingIndicator';
 
 import layoutStyles from '@styles/layout';
@@ -27,11 +26,10 @@ const BUTTON_STYLES: Map<
 ]);
 
 interface TextButtonProps {
-  children?: string;
+  children?: React.ReactChild;
   outline?: boolean;
   type?: ButtonType;
   style?: StyleProp<ViewStyle>;
-  customTextStyles?: StyleProp<TextStyle>;
   onPress?: () => void;
   invert?: boolean;
   disabled?: boolean;
@@ -45,7 +43,6 @@ const Button: React.FC<TextButtonProps> = ({
   outline = false,
   type = ButtonType.Primary,
   style,
-  customTextStyles,
   onPress,
   invert,
   disabled,
@@ -57,7 +54,7 @@ const Button: React.FC<TextButtonProps> = ({
   const fillColor = invert ? styles.buttonFillWhite : styles.buttonFillBlack;
   const buttonStyle = [outline ? outlineColor : fillColor, styles.buttonContainer, style];
 
-  const { container, text } = BUTTON_STYLES.get(type) ?? {};
+  const { container } = BUTTON_STYLES.get(type) ?? {};
 
   return (
     <TouchableOpacity
@@ -74,13 +71,7 @@ const Button: React.FC<TextButtonProps> = ({
       disabled={disabled || loading}
       testID={testID}
     >
-      {loading ? (
-        <LoadingIndicator />
-      ) : (
-        <>
-          <Text style={[text, customTextStyles]}>{children}</Text>
-        </>
-      )}
+      {loading ? <LoadingIndicator /> : children}
     </TouchableOpacity>
   );
 };

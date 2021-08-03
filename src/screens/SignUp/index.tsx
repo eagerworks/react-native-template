@@ -11,7 +11,7 @@ import SignInInfo from '@models/SignInInfo';
 
 import Text from '@components/Text';
 import TextInput from '@components/TextInput';
-import TextButton from '@components/TextButton';
+import Button from '@components/Button';
 
 import layoutStyles from '@styles/layout';
 import textStyles from '@styles/text';
@@ -39,12 +39,12 @@ const SignUp: React.FC<AuthNavParams<'SignUp'>> = ({ navigation }) => {
         secure
       />
       <View style={layoutStyles.rowDirection}>
-        <TextButton onPress={onSubmit} loading={loading}>
-          Sign up
-        </TextButton>
-        <TextButton onPress={() => navigation.navigate('SignUp')} loading={loading}>
-          Sign in
-        </TextButton>
+        <Button onPress={onSubmit} loading={loading}>
+          <Text>Sign up</Text>
+        </Button>
+        <Button onPress={() => navigation.navigate('SignUp')} loading={loading}>
+          <Text>Sign in</Text>
+        </Button>
       </View>
     </View>
   );

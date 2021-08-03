@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import { RootState } from '@store';
 import * as authActions from '@store/authReducer/actions';
@@ -11,7 +12,7 @@ import SignInInfo from '@models/SignInInfo';
 
 import Text from '@components/Text';
 import TextInput from '@components/TextInput';
-import TextButton, { ButtonType } from '@components/TextButton';
+import Button, { ButtonType } from '@components/Button';
 import Card from '@components/Card';
 
 import RabbitIcon from '@icons/rabbit.svg';
@@ -31,11 +32,13 @@ const SignIn: React.FC<AuthNavParams<'SignIn'>> = ({ navigation }) => {
 
   const onSubmit = () => dispatch(authActions.signIn(userInfo));
 
+  const { t } = useTranslation();
+
   return (
     <>
       <Card style={[layoutStyles.alignCenter, layoutStyles.m10]}>
         <RabbitIcon width={100} height={100} />
-        <Text style={[layoutStyles.my20, textStyles.title]}>Login</Text>
+        <Text style={[layoutStyles.my20, textStyles.title]}>{t('common.log in')}</Text>
         <View style={[layoutStyles.mx20, layoutStyles.stretch]}>
           {error !== '' && <Text style={[textStyles.error, textStyles.tertiary]}>{error}</Text>}
           <TextInput
@@ -48,22 +51,22 @@ const SignIn: React.FC<AuthNavParams<'SignIn'>> = ({ navigation }) => {
             secure
           />
           <View style={[layoutStyles.rowDirection, layoutStyles.mt10]}>
-            <TextButton
+            <Button
               onPress={onSubmit}
               loading={loading}
               style={[layoutStyles.flex, layoutStyles.mx5]}
               type={ButtonType.Primary}
             >
-              Sign in
-            </TextButton>
-            <TextButton
+              <Text>Sign in</Text>
+            </Button>
+            <Button
               onPress={() => navigation.navigate('SignUp')}
               loading={loading}
               style={[layoutStyles.flex, layoutStyles.mx5]}
               type={ButtonType.Secondary}
             >
-              Sign up
-            </TextButton>
+              <Text>Sign up</Text>
+            </Button>
           </View>
         </View>
       </Card>

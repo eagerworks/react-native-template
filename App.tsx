@@ -7,6 +7,8 @@ import { store, persistor } from '@store';
 
 import MainStackNavigator from '@navigation/MainStackNavigator';
 
+import './src/i18n';
+
 const App: React.FC<{}> = () => (
   <Provider store={store}>
     <PersistGate persistor={persistor}>

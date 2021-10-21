@@ -7,11 +7,11 @@ import SignIn from '@screens/SignIn';
 
 const Stack = createStackNavigator<AuthStackParamList>();
 
-const MainStackNavigator: React.FC<{}> = () => (
+const AuthStackNavigator: React.FC<{}> = () => (
   <Stack.Navigator initialRouteName="SignIn">
     <Stack.Screen name="SignIn" component={SignIn} options={{ title: 'SignIn' }} />
     <Stack.Screen name="SignUp" component={SignUp} options={{ title: 'SignUp' }} />
   </Stack.Navigator>
 );
 
-export default MainStackNavigator;
+export default AuthStackNavigator;

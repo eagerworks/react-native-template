@@ -3,7 +3,7 @@ export default {
     translation: {
       common: {
         'log in': 'Log in',
-        'log out': 'log out',
+        'log out': 'Log out',
       },
     },
   },
